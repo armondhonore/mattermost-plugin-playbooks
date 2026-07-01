@@ -2,7 +2,7 @@ application:
   name: mattermost-playbooks
   pods:
   - name: app
-    image: mattermost/mattermost-team-edition:latest
+    image: mirror.gcr.io/mattermost/mattermost-team-edition:latest
     path: /
     servicePorts:
     - 8065
@@ -11,7 +11,7 @@ application:
       MM_SQLSETTINGS_DATASOURCE: "postgres://mattermost:mattermost@postgres.pod:5432/mattermost?sslmode=disable&connect_timeout=10"
       MM_SERVICESETTINGS_SITEURL: "https://relaxed-weasel-mattermost-playbooks.cloud.nexlayer.ai"
   - name: postgres
-    image: postgres:16-alpine
+    image: mirror.gcr.io/library/postgres:16-alpine
     servicePorts:
     - 5432
     vars:
